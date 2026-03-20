@@ -1,0 +1,9 @@
+node_modules
+.git
+tmp
+log
+storage
+public/decidim-packs
+public/packs
+.bundle
+vendor/bundle

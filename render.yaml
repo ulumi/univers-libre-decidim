@@ -1,9 +1,7 @@
 services:
   - type: web
     name: univers-libre
-    runtime: ruby
-    buildCommand: chmod +x bin/render-build.sh && ./bin/render-build.sh
-    startCommand: bundle exec puma -C config/puma.rb
+    runtime: docker
     envVars:
       - key: DATABASE_URL
         sync: false
