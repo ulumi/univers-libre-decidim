@@ -1,0 +1,52 @@
+// Univers Libre — Custom Styles
+
+// Hero section styling
+.hero {
+  background: linear-gradient(135deg, #0f2439 0%, #1e3a5f 50%, #2d5a8e 100%) !important;
+}
+
+// Navigation bar refinements
+.main-bar {
+  background-color: #0f2439 !important;
+
+  &__logo img {
+    filter: brightness(1.1);
+  }
+}
+
+// Footer styling
+.main-footer {
+  background-color: #0f2439 !important;
+}
+
+// Card hover effects
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
+  }
+}
+
+// Buttons refinements
+[class*="button"] {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+// Headings
+h1, h2, h3 {
+  color: #1e3a5f;
+}
+
+// Process cards
+.process-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+// Smoother links
+a {
+  transition: color 0.15s ease;
+}
