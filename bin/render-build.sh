@@ -7,15 +7,8 @@ npm install --legacy-peer-deps
 # SECRET_KEY_BASE needed during asset precompilation
 export SECRET_KEY_BASE=${SECRET_KEY_BASE:-$(ruby -rsecurerandom -e 'puts SecureRandom.hex(64)')}
 
-# Build assets with full trace for debugging
-bundle exec rake assets:precompile --trace 2>&1 || {
-  echo "=== ASSET PRECOMPILE FAILED ==="
-  echo "Ruby version: $(ruby -v)"
-  echo "Bundler version: $(bundle -v)"
-  echo "Checking Decidim load..."
-  bundle exec ruby -e "require 'decidim'; puts 'Decidim loaded OK'" 2>&1 || true
-  exit 1
-}
+# Precompile assets WITHOUT database connection (not needed for assets)
+DATABASE_URL="" bundle exec rake assets:precompile
 
-# Database setup
+# Database setup (needs real DATABASE_URL)
 bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
